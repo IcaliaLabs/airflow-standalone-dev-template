@@ -12,7 +12,12 @@ pool:
 steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
-
+- task: AzureCLI@2
+  inputs:
+    azureSubscription: 'Internal Projects(385b4a6c-3c96-4e12-9747-79e3cdfdbd3f)'
+    scriptType: 'bash'
+    scriptLocation: 'inlineScript'
+    inlineScript: 'az --version'
 - script: |
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
